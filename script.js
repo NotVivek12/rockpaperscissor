@@ -1,13 +1,9 @@
-let score = JSON.parse(localStorage.getItem('score'));
-
-if (!score) {
-    // If score is null (not found in localStorage), initialize it
-    score = {
+const score = {
         wins: 0,
         loses: 0,
         ties: 0
     };
-}
+
 
 
 function pickComputerMove() {
@@ -71,7 +67,6 @@ function playGame(playerMove) {
         score.ties++;
     }
 
-    localStorage.setItem('score',JSON.stringify(score));
 
     alert(`Computer Chose ${computerMove}. You Chose ${playerMove}. ${result}
 Wins: ${score.wins}. Losses: ${score.loses}. Ties: ${score.ties}`);
