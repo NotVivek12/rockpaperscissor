@@ -1,4 +1,14 @@
-const score= JSON.parse(localStorage.getItem('score'));
+let score = JSON.parse(localStorage.getItem('score'));
+
+if (!score) {
+    // If score is null (not found in localStorage), initialize it
+    score = {
+        wins: 0,
+        loses: 0,
+        ties: 0
+    };
+}
+
 
 function pickComputerMove() {
     let computerMove = '';
